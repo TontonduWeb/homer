@@ -24,8 +24,6 @@
     $this->setEnergy($energy);
     }
 
-    abstract public function changeWheel();
-
     public function forward(): string
     {
     $this->currentSpeed = 15;
@@ -49,12 +47,12 @@
     return $this->currentSpeed;
     }
 
-    public function setCurrentSpeed(int $currentSpeed): void
-    {
-    if($currentSpeed >= 0){
-    $this->currentSpeed = $currentSpeed;
-    }
-    }
+     public function setCurrentSpeed(int $currentSpeed): void
+     {
+         if($currentSpeed >= 0){
+             $this->currentSpeed = $currentSpeed;
+         }
+     }
 
     public function getColor(): string
     {

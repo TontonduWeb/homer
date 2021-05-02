@@ -2,7 +2,7 @@
 
 require_once 'Vehicle.php';
 
-class Cars extends Vehicle
+class Car extends Vehicle implements LightableInterface
 
 {
     protected int $energyLevel;
@@ -15,6 +15,16 @@ class Cars extends Vehicle
         $this->color = $color;
         $this->nbSeats = $nbSeats;
         $this->energy = $energy;
+    }
+
+    public function switchOff(bool $light): bool
+    {
+        return false;
+    }
+
+    public function switchOn(bool $light): bool
+    {
+        return true;
     }
 
     public function triggerParkBrake()

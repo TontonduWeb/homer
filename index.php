@@ -1,10 +1,19 @@
 <?php
+require_once 'LightableInterface.php';
 require_once 'Vehicle.php';
 require_once 'Bicycle.php';
-require_once 'Cars.php';
+require_once 'Car.php';
 require_once 'Trucks.php';
+require_once 'Speedometer.php';
 
-$hello = new Cars('black', 4, 'Essence');
+echo Speedometer::converterKmInMiles(5);die;
+
+$poulidor = new Bicycle('black',2,'essence');
+$poulidor->setCurrentSpeed(12);
+var_dump($poulidor->switchOn(true));die;
+
+
+$hello = new Car('black', 4, 'Essence');
 var_dump($hello);
 
 try {
@@ -18,13 +27,10 @@ try {
 }
 
 
-
-var_dump($hello);die;
-
 $bike= new Bicycle('blue', 1, 'foot');
 $bike->setCurrentSpeed(0);
 
-$car = new Cars('green', 4, 'electric');
+$car = new Car('green', 4, 'electric');
 
 $truck = new Trucks('white', 6, 100, 'Trucky');
 $truck->setEnergy('fuel');
@@ -33,8 +39,8 @@ $truck->setIsFull(100);
 $mercedes = new Trucks('red', 5, 150, 'Mercedes');
 $mercedes->setEnergy('electric');
 
-$tesla = new Cars('black', 4, 'electric');
-$ferrari = new Cars('red', 2, 'essence');
+$tesla = new Car('black', 4, 'electric');
+$ferrari = new Car('red', 2, 'essence');
 $decathlonBike = new Bicycle('yellow', 2, 'foot');
 
 //$vehicle = new Vehicle('pink', 4);
